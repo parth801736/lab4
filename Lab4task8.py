@@ -6,7 +6,6 @@ def removepattern(word):
         stri = word.strip()
         stri = word.replace(p,'')
     return stri
-
 def sed(filename1,filename2):
      try:
         master = open(filename1,"r")
@@ -17,8 +16,6 @@ def sed(filename1,filename2):
         print("File write operation completed")
      except:
         print("Something went wrong!!!")
-
-
 x = input("Enter master file for copy operation:")
 y = input("Enter slave file:")
 sed(x,y)
