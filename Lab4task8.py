@@ -1,16 +1,24 @@
-def sed(pattern_str, replacement_str, file1, file2):
-    try:
-        fin = open("Alice_in_Wonderland.txt")
-        lines = fin.readlines()
+import string
+def removepattern(word):
+    punc = string.punctuation
+    stri = ""
+    for p in punc:
+        stri = word.strip()
+        stri = word.replace(p,'')
+    return stri
 
-        new_file = open("file2.txt", 'w')
+def sed(filename1,filename2):
+     try:
+        master = open(filename1,"r")
+        slave = open(filename2,"w")
+        for ma in master:
+            new = removepattern(ma)
+            slave.write(ma)
+        print("File write operation completed")
+     except:
+        print("Something went wrong!!!")
 
-        for line in lines:
-            new_line = line.replace(pattern_str, replacement_str)
-            new_file.write(new_line)
 
-        new_file.close()
-
-    except:
-        print "Error."
-sed()
+x = input("Enter master file for copy operation:")
+y = input("Enter slave file:")
+sed(x,y)
