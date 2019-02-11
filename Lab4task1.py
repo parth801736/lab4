@@ -2,7 +2,7 @@ import string
 
 def stripped_text():
 	n_res = []
-	f = open('Alice_in_Wonderland','r')
+	f = open('Alice_in_Wonderland.txt','r')
 
 	for line in f:
 		res = line.lower().strip(string.punctuation + string.whitespace).split()
@@ -10,6 +10,5 @@ def stripped_text():
 	return n_res
 
 print(stripped_text())
-
 
 
